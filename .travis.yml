@@ -1,4 +1,5 @@
 sudo: false
 language: java
 jdk: openjdk11
-script: mvn clean && mvn compile && mvn test-compile && mvn dependency:copy-dependencies && mvn jar:jar && mvn tes
+script:
+  - mvn install -DskipTests=false -Dmaven.javadoc.skip=true -B -V && mvn test -B
