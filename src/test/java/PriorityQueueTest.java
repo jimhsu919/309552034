@@ -52,7 +52,7 @@ public class PriorityQueueTest {
     @Test
     void NullPointerException_offer() {
         Exception e = assertThrows(RuntimeException.class, () -> {
-            test.offer(0);
+            test.offer(1);
         });
 
         System.out.println(e.getClass());
