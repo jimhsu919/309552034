@@ -3,5 +3,9 @@ jdk: openjdk11
 install: true
 script: 
   - mvn clean verify
-
+jobs:
+  include:
+    - stage: "Tests"
+    - name: PriorityQueueTest
+    - script: java PriorityQueueTest
 
