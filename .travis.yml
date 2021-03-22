@@ -1,11 +1,13 @@
+sudo: false
 language: java
-jdk: openjdk11
-install: true
-script: 
-  - mvn test -B
-jobs:
-  include:
-    - stage: "Tests"
-    - name: PriorityQueueTest
-    - script: java PriorityQueueTest
+cache:
+  directories:
+  - "$HOME/.cache"
 
+before_install:
+  - cp .travis.settings.xml $HOME/.m2/settings.xml
+
+deploy:
+  provider: script
+  script: "mvn -B -V deploy"
+  skip_cleanup: true
