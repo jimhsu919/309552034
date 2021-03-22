@@ -1,5 +1,5 @@
 sudo: false
 language: java
 jdk: openjdk11
-script:
-  - mvn install -DskipTests=false -Dmaven.javadoc.skip=true -B -V && mvn test -B
+install: mvn clean verify
+script: mvn test -B
